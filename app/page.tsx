@@ -35,14 +35,12 @@ function Hero() {
           emails, then drafts personalized replies that match your tone of voice.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href="#install"
-            className="inline-flex items-center gap-2 bg-primary text-primary-fg px-6 py-3 rounded-lg text-base font-semibold hover:bg-primary-hover transition-colors shadow-md"
+          <div
+            className="inline-flex items-center gap-2 bg-primary/60 text-primary-fg px-6 py-3 rounded-lg text-base font-semibold cursor-default shadow-md"
           >
             <Chrome size={20} />
-            Add to Chrome
-            <ArrowRight size={16} />
-          </a>
+            Coming Soon
+          </div>
           <a
             href="#how-it-works"
             className="inline-flex items-center gap-2 border border-border-strong text-text-secondary px-6 py-3 rounded-lg text-base font-medium hover:bg-bg-muted transition-colors"
@@ -266,22 +264,18 @@ function Install() {
           <Chrome size={32} className="text-accent" />
         </div>
         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-text-primary">
-          Ready to get started?
+          Coming soon to Chrome
         </h2>
         <p className="mt-4 text-text-secondary text-lg max-w-lg mx-auto">
-          Install the extension from the Chrome Web Store and start getting
-          personalized email reply drafts in minutes.
+          EmailResponder is currently under review on the Chrome Web Store.
+          Check back soon to install and start getting personalized email reply drafts.
         </p>
-        <a
-          href="https://chromewebstore.google.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-8 inline-flex items-center gap-2 bg-primary text-primary-fg px-8 py-4 rounded-xl text-lg font-semibold hover:bg-primary-hover transition-colors shadow-lg"
+        <div
+          className="mt-8 inline-flex items-center gap-2 bg-primary/60 text-primary-fg px-8 py-4 rounded-xl text-lg font-semibold cursor-default shadow-lg"
         >
           <Chrome size={22} />
-          Add to Chrome
-          <ArrowRight size={18} />
-        </a>
+          Coming Soon
+        </div>
         <p className="mt-4 text-sm text-text-muted">
           Free to use. Requires your own AI API key.
         </p>

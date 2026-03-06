@@ -25,13 +25,12 @@ export function NavBar() {
             Install
           </a>
         </div>
-        <a
-          href="/#install"
-          className="hidden sm:inline-flex items-center gap-2 bg-primary text-primary-fg px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary-hover transition-colors"
+        <span
+          className="hidden sm:inline-flex items-center gap-2 bg-primary/60 text-primary-fg px-4 py-2 rounded-lg text-sm font-medium cursor-default"
         >
           <Chrome size={16} />
-          Install Extension
-        </a>
+          Coming Soon
+        </span>
       </div>
     </nav>
   );
