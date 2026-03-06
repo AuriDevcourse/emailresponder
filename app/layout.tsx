@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "A Chrome extension that learns your writing style and drafts personalized email replies using AI. Supports Claude, OpenAI, and Gemini.",
   icons: {
-    icon: "/logo-icon.svg",
+    icon: "/favicon.png",
   },
   verification: {
     google: "f1M5N8MyRmEpDvnUhnwLjxOPBh3nWslSwfdoV82V9Zg",
