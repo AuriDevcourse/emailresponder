@@ -4,18 +4,15 @@ export function Footer() {
   return (
     <footer className="border-t border-border py-8 px-6">
       <div className="mx-auto max-w-5xl flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="flex items-center gap-3">
+        <a href="/" className="flex items-center">
           <Image
-            src="/logo-icon.svg"
-            alt="Logo"
-            width={24}
-            height={24}
-            className="rounded-md"
+            src="/fulllogo-dark.png"
+            alt="EmailResponder"
+            width={140}
+            height={40}
+            className="h-7 w-auto"
           />
-          <span className="text-sm text-text-muted">
-            Auri&apos;s Email Replier
-          </span>
-        </div>
+        </a>
         <div className="flex items-center gap-6 text-sm text-text-muted">
           <a
             href="/privacy"

@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Auri's Email Replier - AI-Powered Gmail Reply Assistant",
+  title: "EmailResponder - AI-Powered Gmail Reply Assistant",
   description:
     "A Chrome extension that learns your writing style and drafts personalized email replies using AI. Supports Claude, OpenAI, and Gemini.",
   icons: {
     icon: "/logo-icon.svg",
   },
   openGraph: {
-    title: "Auri's Email Replier",
+    title: "EmailResponder",
     description: "AI-powered email replies that match your personal tone of voice",
     type: "website",
   },

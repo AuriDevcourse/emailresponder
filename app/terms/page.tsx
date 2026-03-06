@@ -3,7 +3,7 @@ import { NavBar } from "../components/nav-bar";
 import { Footer } from "../components/footer";
 
 export const metadata: Metadata = {
-  title: "Terms of Service - Auri's Email Replier",
+  title: "Terms of Service - EmailResponder",
 };
 
 export default function TermsOfService() {
@@ -24,7 +24,7 @@ export default function TermsOfService() {
                 1. Acceptance of Terms
               </h2>
               <p>
-                By installing and using Auri&apos;s Email Replier (&quot;the
+                By installing and using EmailResponder (&quot;the
                 Extension&quot;), you agree to these Terms of Service. If you do not
                 agree, please uninstall the Extension.
               </p>

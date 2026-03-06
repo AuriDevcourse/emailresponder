@@ -3,7 +3,7 @@ import { NavBar } from "../components/nav-bar";
 import { Footer } from "../components/footer";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - Auri's Email Replier",
+  title: "Privacy Policy - EmailResponder",
 };
 
 export default function PrivacyPolicy() {
@@ -24,7 +24,7 @@ export default function PrivacyPolicy() {
                 What the extension does
               </h2>
               <p>
-                Auri&apos;s Email Replier is a Chrome extension that reads your recent
+                EmailResponder is a Chrome extension that reads your recent
                 Gmail inbox, analyzes your writing tone from sent emails, and creates
                 AI-generated reply drafts using your chosen AI provider (Anthropic
                 Claude, OpenAI, or Google Gemini).

@@ -168,7 +168,7 @@ const steps = [
   {
     num: "1",
     title: "Install the Extension",
-    desc: "Add Auri's Email Replier from the Chrome Web Store and sign in with your Google account.",
+    desc: "Add EmailResponder from the Chrome Web Store and sign in with your Google account.",
     icon: Chrome,
   },
   {
@@ -310,7 +310,7 @@ function Creator() {
               Aurimas Baciauskas
             </h3>
             <p className="text-text-secondary mt-1">
-              Developer &amp; creator of Auri&apos;s Email Replier
+              Developer &amp; creator of EmailResponder
             </p>
             <div className="flex items-center justify-center gap-4 mt-4">
               <a
