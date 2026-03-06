@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     title: "EmailResponder",
     description: "AI-powered email replies that match your personal tone of voice",
     type: "website",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 800 }],
   },
 };
 
