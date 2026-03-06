@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     icon: "/logo-icon.svg",
   },
   verification: {
-    google: "RP2LesheLTGXJ7SOJf2zM34SsMgix68SH9DI4mWsB-E",
+    google: "f1M5N8MyRmEpDvnUhnwLjxOPBh3nWslSwfdoV82V9Zg",
   },
   openGraph: {
     title: "EmailResponder",
