@@ -8,9 +8,9 @@ export function Footer() {
           <Image
             src="/fulllogo-dark.png"
             alt="EmailResponder"
-            width={140}
-            height={40}
-            className="h-7 w-auto"
+            width={220}
+            height={60}
+            className="h-14 w-auto"
           />
         </a>
         <div className="flex items-center gap-6 text-sm text-text-muted">

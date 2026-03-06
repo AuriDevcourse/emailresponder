@@ -9,9 +9,9 @@ export function NavBar() {
           <Image
             src="/fulllogo-dark.png"
             alt="EmailResponder"
-            width={180}
-            height={50}
-            className="h-9 w-auto"
+            width={280}
+            height={80}
+            className="h-16 w-auto"
           />
         </a>
         <div className="hidden sm:flex items-center gap-8 text-sm text-text-secondary">
