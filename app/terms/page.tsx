@@ -156,10 +156,10 @@ export default function TermsOfService() {
               <p>
                 If you have questions about these terms, contact:{" "}
                 <a
-                  href="mailto:aurimas.baciauskas@gmail.com"
+                  href="mailto:baciauskas.aurimas@gmail.com"
                   className="text-accent hover:underline"
                 >
-                  aurimas.baciauskas@gmail.com
+                  baciauskas.aurimas@gmail.com
                 </a>
               </p>
             </section>
