@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/logo-icon.svg",
   },
+  verification: {
+    google: "5lChQCbLNMh83-br3HOYYBh_M4MEbQw-C4-Ac_JQTlc",
+  },
   openGraph: {
     title: "EmailResponder",
     description: "AI-powered email replies that match your personal tone of voice",
