@@ -106,7 +106,7 @@ const features = [
   {
     icon: Sparkles,
     title: "AI-Powered Reply Generation",
-    desc: "Generates reply drafts that sound exactly like you wrote them. Supports Claude, OpenAI GPT, and Google Gemini.",
+    desc: "Generates reply drafts that sound exactly like you wrote them. Supports 8 AI providers including Claude, OpenAI, Gemini, and more.",
   },
   {
     icon: Bot,
@@ -120,8 +120,8 @@ const features = [
   },
   {
     icon: FileText,
-    title: "Custom Reply Instructions",
-    desc: "Set custom rules like 'Always use we, not I' or 'Keep replies under 3 sentences' to fine-tune the output.",
+    title: "Multi-Account Support",
+    desc: "Manage multiple Gmail accounts from a single extension. Each account gets its own tone profile and settings.",
   },
   {
     icon: Shield,
@@ -172,7 +172,7 @@ const steps = [
   {
     num: "2",
     title: "Add Your API Key",
-    desc: "Bring your own key from Anthropic (Claude), OpenAI, or Google Gemini. Your key stays in your browser.",
+    desc: "Bring your own key from any supported provider. Provider is auto-detected. Your key stays in your browser.",
     icon: Key,
   },
   {
@@ -235,19 +235,23 @@ function AIProviders() {
           Choose the AI provider that works best for you. Bring your own API key
           and keep full control.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           {[
-            { name: "Claude", provider: "Anthropic", models: "Sonnet, Haiku, Opus" },
-            { name: "GPT", provider: "OpenAI", models: "GPT-4o, GPT-4o mini" },
-            { name: "Gemini", provider: "Google", models: "Gemini Pro, Flash" },
+            { name: "Claude", provider: "Anthropic" },
+            { name: "GPT", provider: "OpenAI" },
+            { name: "Gemini", provider: "Google" },
+            { name: "Grok", provider: "xAI" },
+            { name: "DeepSeek", provider: "DeepSeek" },
+            { name: "Qwen", provider: "Alibaba" },
+            { name: "Kimi", provider: "Moonshot" },
+            { name: "GLM", provider: "Zhipu AI" },
           ].map((p) => (
             <div
               key={p.name}
-              className="rounded-xl border border-border bg-bg-secondary p-6 hover:border-border-strong transition-colors"
+              className="rounded-xl border border-border bg-bg-secondary p-5 hover:border-border-strong transition-colors"
             >
-              <h3 className="font-bold text-text-primary text-lg">{p.name}</h3>
+              <h3 className="font-bold text-text-primary text-base">{p.name}</h3>
               <p className="text-xs text-text-muted mt-1">by {p.provider}</p>
-              <p className="text-sm text-text-secondary mt-3">{p.models}</p>
             </div>
           ))}
         </div>

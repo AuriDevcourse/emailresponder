@@ -26,7 +26,7 @@ export function Footer() {
           >
             Terms of Service
           </a>
-          <span>&copy; 2025 Aurimas Baciauskas</span>
+          <span>&copy; 2026 Aurimas Baciauskas</span>
         </div>
       </div>
     </footer>
