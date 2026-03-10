@@ -1,288 +1,318 @@
 import Image from "next/image";
 import {
-  Sparkles,
   ScanEye,
-  FileText,
   BookOpen,
   Bot,
-  Key,
   Chrome,
   ArrowRight,
   Mail,
   Shield,
   Linkedin,
   Github,
-  ChevronDown,
+  Users,
+  Zap,
 } from "lucide-react";
 import { NavBar } from "./components/nav-bar";
 import { Footer } from "./components/footer";
 
+const providers = [
+  "Anthropic", "OpenAI", "Gemini", "Grok",
+  "DeepSeek", "Qwen", "Kimi", "GLM",
+];
+
 function Hero() {
   return (
-    <section className="pt-32 pb-20 sm:pt-40 sm:pb-28 px-6">
-      <div className="mx-auto max-w-3xl text-center">
-        <div className="inline-flex items-center gap-2 bg-accent-light border border-border-strong rounded-full px-4 py-1.5 mb-8">
-          <Sparkles size={14} className="text-accent" />
-          <span className="text-sm text-accent font-medium">AI-Powered Email Assistant</span>
-        </div>
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-text-primary leading-tight">
-          Email replies that
-          <br />
-          <span className="text-accent">sound like you</span>
-        </h1>
-        <p className="mt-6 text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
-          A Chrome extension that learns your unique writing style from your sent
-          emails, then drafts personalized replies that match your tone of voice.
-        </p>
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <div
-            className="inline-flex items-center gap-2 bg-primary/60 text-primary-fg px-6 py-3 rounded-lg text-base font-semibold cursor-default shadow-md"
-          >
-            <Chrome size={20} />
-            Coming Soon
+    <section className="relative pt-28 sm:pt-36 pb-16 sm:pb-24 px-6 overflow-hidden">
+      {/* Decorative gradient blob */}
+      <div className="absolute top-20 -right-32 w-[500px] h-[500px] bg-accent/[0.04] rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="mx-auto max-w-6xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+          {/* Left — copy */}
+          <div>
+            <p className="text-sm tracking-widest uppercase text-text-muted mb-6">
+              Chrome Extension
+            </p>
+            <h1 className="text-[2.75rem] sm:text-6xl lg:text-[4.25rem] font-bold tracking-tight text-text-primary leading-[1.05]">
+              Your emails,
+              <br />
+              <span className="text-accent">your voice.</span>
+            </h1>
+            <p className="mt-6 text-lg text-text-secondary max-w-md leading-relaxed">
+              EmailResponder learns how you write from your sent emails, then
+              drafts replies that actually sound like you. Not a bot. You.
+            </p>
+            <div className="mt-8 flex items-center gap-4">
+              <div className="inline-flex items-center gap-2 bg-primary text-primary-fg px-5 py-2.5 rounded-lg text-sm font-semibold">
+                <Chrome size={18} />
+                Coming Soon
+              </div>
+              <a
+                href="#how-it-works"
+                className="group inline-flex items-center gap-1.5 text-sm text-text-secondary hover:text-accent transition-colors"
+              >
+                See how it works
+                <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+              </a>
+            </div>
+
+            {/* Provider pills */}
+            <div className="mt-10 flex flex-wrap gap-2">
+              {providers.map((p) => (
+                <span
+                  key={p}
+                  className="text-xs text-text-muted border border-border rounded-full px-3 py-1"
+                >
+                  {p}
+                </span>
+              ))}
+            </div>
           </div>
-          <a
-            href="#how-it-works"
-            className="inline-flex items-center gap-2 border border-border-strong text-text-secondary px-6 py-3 rounded-lg text-base font-medium hover:bg-bg-muted transition-colors"
-          >
-            Learn more
-            <ChevronDown size={16} />
-          </a>
+
+          {/* Right — floating UI preview */}
+          <div className="relative lg:pl-8">
+            <div className="relative rounded-2xl border border-border-strong bg-bg-secondary/80 backdrop-blur-sm shadow-2xl overflow-hidden">
+              {/* Toolbar */}
+              <div className="flex items-center gap-2 px-4 py-3 border-b border-border/60">
+                <div className="w-2.5 h-2.5 rounded-full bg-border-strong" />
+                <div className="w-2.5 h-2.5 rounded-full bg-border-strong" />
+                <div className="w-2.5 h-2.5 rounded-full bg-border-strong" />
+              </div>
+
+              {/* Mock email */}
+              <div className="p-5 border-b border-border/40">
+                <div className="flex items-start justify-between mb-3">
+                  <div>
+                    <p className="text-sm font-medium text-text-primary">Re: Partnership proposal</p>
+                    <p className="text-xs text-text-muted mt-0.5">from alex@startup.io</p>
+                  </div>
+                  <span className="text-[10px] text-text-muted">2 min ago</span>
+                </div>
+                <p className="text-xs text-text-secondary leading-relaxed">
+                  Hi! Would love to discuss a potential partnership between our teams.
+                  Are you available for a quick call this week?
+                </p>
+              </div>
+
+              {/* Mock generated reply */}
+              <div className="p-5 bg-accent/[0.03]">
+                <div className="flex items-center gap-2 mb-3">
+                  <Zap size={12} className="text-accent" />
+                  <span className="text-[10px] font-medium text-accent uppercase tracking-wider">
+                    Generated reply
+                  </span>
+                </div>
+                <p className="text-xs text-text-primary leading-relaxed">
+                  Hey Alex, thanks for reaching out! A partnership sounds interesting.
+                  I&apos;m free Thursday afternoon or Friday morning if either works for you.
+                  Looking forward to chatting!
+                </p>
+                <div className="flex gap-2 mt-4">
+                  <span className="text-[10px] bg-accent/20 text-accent rounded px-2 py-0.5 font-medium">
+                    Save as Draft
+                  </span>
+                  <span className="text-[10px] bg-bg-muted text-text-muted rounded px-2 py-0.5">
+                    Regenerate
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating tone badge */}
+            <div className="absolute -bottom-4 -left-4 sm:left-auto sm:-right-4 rounded-xl border border-border-strong bg-bg-secondary p-3 shadow-lg">
+              <p className="text-[10px] text-text-muted mb-1">Tone match</p>
+              <div className="flex items-center gap-2">
+                <div className="w-16 h-1.5 rounded-full bg-border overflow-hidden">
+                  <div className="w-[92%] h-full bg-accent rounded-full" />
+                </div>
+                <span className="text-xs font-semibold text-accent">92%</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
 }
-
-function ScreenshotSection() {
-  return (
-    <section className="pb-20 px-6">
-      <div className="mx-auto max-w-4xl">
-        <div className="relative rounded-2xl border border-border-strong bg-bg-secondary p-2 shadow-2xl">
-          <div className="flex items-center gap-2 px-4 py-3 border-b border-border">
-            <div className="w-3 h-3 rounded-full bg-border-strong" />
-            <div className="w-3 h-3 rounded-full bg-border-strong" />
-            <div className="w-3 h-3 rounded-full bg-border-strong" />
-            <span className="ml-3 text-xs text-text-muted">Chrome Extension</span>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-6">
-            <div className="rounded-xl bg-bg p-5 border border-border">
-              <ScanEye size={24} className="text-accent mb-3" />
-              <h3 className="font-semibold text-sm text-text-primary mb-1">Tone Analysis</h3>
-              <p className="text-xs text-text-muted leading-relaxed">
-                Reads your sent emails and builds a profile of your writing style,
-                formality, greetings, and vocabulary.
-              </p>
-            </div>
-            <div className="rounded-xl bg-bg p-5 border border-border">
-              <Mail size={24} className="text-accent mb-3" />
-              <h3 className="font-semibold text-sm text-text-primary mb-1">Smart Inbox</h3>
-              <p className="text-xs text-text-muted leading-relaxed">
-                Browse your inbox, view emails, and generate AI-drafted replies
-                with a single click.
-              </p>
-            </div>
-            <div className="rounded-xl bg-bg p-5 border border-border">
-              <Bot size={24} className="text-accent mb-3" />
-              <h3 className="font-semibold text-sm text-text-primary mb-1">Auto-Drafts</h3>
-              <p className="text-xs text-text-muted leading-relaxed">
-                Automatically checks for new emails and creates draft replies
-                every 10 minutes.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-const features = [
-  {
-    icon: ScanEye,
-    title: "Learns Your Writing Style",
-    desc: "Analyzes your sent emails to understand your tone, formality, greetings, closing style, vocabulary, and characteristic phrases.",
-  },
-  {
-    icon: Sparkles,
-    title: "AI-Powered Reply Generation",
-    desc: "Generates reply drafts that sound exactly like you wrote them. Supports 8 AI providers including Claude, OpenAI, Gemini, and more.",
-  },
-  {
-    icon: Bot,
-    title: "Automatic Draft Creation",
-    desc: "Runs in the background every 10 minutes, automatically creating draft replies for emails that need a response.",
-  },
-  {
-    icon: BookOpen,
-    title: "Knowledge Base",
-    desc: "Upload documents and notes so the AI can reference your organization's information when crafting replies.",
-  },
-  {
-    icon: FileText,
-    title: "Multi-Account Support",
-    desc: "Manage multiple Gmail accounts from a single extension. Each account gets its own tone profile and settings.",
-  },
-  {
-    icon: Shield,
-    title: "Privacy-First Design",
-    desc: "Your API key stays in your browser. Email data is only sent to your chosen AI provider. No intermediary servers.",
-  },
-];
 
 function Features() {
   return (
-    <section id="features" className="py-20 px-6">
-      <div className="mx-auto max-w-5xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-text-primary">
-            Everything you need
-          </h2>
-          <p className="mt-4 text-text-secondary text-lg max-w-xl mx-auto">
-            From tone analysis to automatic drafting, all in one lightweight
-            Chrome extension.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((f) => (
-            <div
-              key={f.title}
-              className="group rounded-xl border border-border bg-bg-secondary p-6 hover:border-border-strong hover:bg-bg-muted transition-all"
-            >
-              <div className="w-10 h-10 rounded-lg bg-accent-light border border-border-strong flex items-center justify-center mb-4 group-hover:border-accent/40 transition-colors">
-                <f.icon size={20} className="text-accent" />
-              </div>
-              <h3 className="font-semibold text-text-primary mb-2">{f.title}</h3>
-              <p className="text-sm text-text-secondary leading-relaxed">{f.desc}</p>
+    <section id="features" className="py-20 sm:py-28 px-6">
+      <div className="mx-auto max-w-6xl">
+        {/* Section label */}
+        <p className="text-sm tracking-widest uppercase text-text-muted mb-4">
+          What it does
+        </p>
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-text-primary max-w-lg">
+          Learns your style.
+          <br />
+          <span className="text-text-secondary">Writes like you.</span>
+        </h2>
+
+        {/* Asymmetric feature layout */}
+        <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-4">
+          {/* Large feature */}
+          <div className="lg:col-span-2 rounded-2xl border border-border bg-bg-secondary p-8 sm:p-10 flex flex-col justify-between min-h-[220px] group hover:border-border-strong transition-colors">
+            <ScanEye size={24} className="text-accent" />
+            <div className="mt-auto">
+              <h3 className="text-xl font-semibold text-text-primary mb-2">
+                Tone Analysis
+              </h3>
+              <p className="text-sm text-text-secondary leading-relaxed max-w-md">
+                Analyzes your sent emails to understand your tone, formality,
+                greetings, closing style, vocabulary, and characteristic phrases.
+              </p>
             </div>
-          ))}
+          </div>
+          {/* Stacked small features */}
+          <div className="flex flex-col gap-4">
+            <div className="rounded-2xl border border-border bg-bg-secondary p-6 flex-1 group hover:border-border-strong transition-colors">
+              <Bot size={20} className="text-accent mb-4" />
+              <h3 className="font-semibold text-text-primary text-sm mb-1">Auto-Drafts</h3>
+              <p className="text-xs text-text-secondary leading-relaxed">
+                Runs every 10 minutes in the background, drafting replies to emails that need a response.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-border bg-bg-secondary p-6 flex-1 group hover:border-border-strong transition-colors">
+              <Mail size={20} className="text-accent mb-4" />
+              <h3 className="font-semibold text-text-primary text-sm mb-1">Smart Inbox</h3>
+              <p className="text-xs text-text-secondary leading-relaxed">
+                Filters out newsletters and automated emails. Shows only what needs your attention.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Second row — inverted */}
+        <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="rounded-2xl border border-border bg-bg-secondary p-6 group hover:border-border-strong transition-colors">
+            <BookOpen size={20} className="text-accent mb-4" />
+            <h3 className="font-semibold text-text-primary text-sm mb-1">Knowledge Base</h3>
+            <p className="text-xs text-text-secondary leading-relaxed">
+              Upload docs so the AI can reference your organization&apos;s info when crafting replies.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-border bg-bg-secondary p-6 group hover:border-border-strong transition-colors">
+            <Users size={20} className="text-accent mb-4" />
+            <h3 className="font-semibold text-text-primary text-sm mb-1">Multi-Account</h3>
+            <p className="text-xs text-text-secondary leading-relaxed">
+              Manage multiple Gmail accounts. Each gets its own tone profile and settings.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-border bg-bg-secondary p-6 group hover:border-border-strong transition-colors">
+            <Shield size={20} className="text-accent mb-4" />
+            <h3 className="font-semibold text-text-primary text-sm mb-1">Privacy-First</h3>
+            <p className="text-xs text-text-secondary leading-relaxed">
+              Your API key stays in your browser. No intermediary servers. You own your data.
+            </p>
+          </div>
         </div>
       </div>
     </section>
   );
 }
-
-const steps = [
-  {
-    num: "1",
-    title: "Install the Extension",
-    desc: "Add EmailResponder from the Chrome Web Store and sign in with your Google account.",
-    icon: Chrome,
-  },
-  {
-    num: "2",
-    title: "Add Your API Key",
-    desc: "Bring your own key from any supported provider. Provider is auto-detected. Your key stays in your browser.",
-    icon: Key,
-  },
-  {
-    num: "3",
-    title: "Analyze Your Tone",
-    desc: "The extension reads your sent emails to build a profile of your unique writing style.",
-    icon: ScanEye,
-  },
-  {
-    num: "4",
-    title: "Get Personalized Replies",
-    desc: "Open any email and click 'Generate Reply' or let auto-draft create replies for you automatically.",
-    icon: Sparkles,
-  },
-];
 
 function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-20 px-6 bg-bg-secondary">
-      <div className="mx-auto max-w-4xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-text-primary">
-            How it works
-          </h2>
-          <p className="mt-4 text-text-secondary text-lg">
-            Up and running in under 2 minutes
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          {steps.map((s) => (
-            <div key={s.num} className="flex gap-5">
-              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-accent-light border border-border-strong flex items-center justify-center">
-                <span className="text-accent font-bold text-lg">{s.num}</span>
-              </div>
-              <div>
-                <h3 className="font-semibold text-text-primary mb-1 flex items-center gap-2">
-                  <s.icon size={16} className="text-text-muted" />
-                  {s.title}
-                </h3>
-                <p className="text-sm text-text-secondary leading-relaxed">
-                  {s.desc}
-                </p>
+    <section id="how-it-works" className="py-20 sm:py-28 px-6">
+      <div className="mx-auto max-w-6xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+          {/* Left — steps */}
+          <div>
+            <p className="text-sm tracking-widest uppercase text-text-muted mb-4">
+              Setup
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-text-primary mb-12">
+              Two minutes to
+              <br />
+              <span className="text-text-secondary">your first draft.</span>
+            </h2>
+
+            <div className="space-y-8">
+              {[
+                {
+                  n: "01",
+                  title: "Install & sign in",
+                  desc: "Add EmailResponder from the Chrome Web Store. Sign in with Google to connect your Gmail.",
+                },
+                {
+                  n: "02",
+                  title: "Paste your API key",
+                  desc: "From any supported provider. It\u2019s auto-detected and never leaves your browser.",
+                },
+                {
+                  n: "03",
+                  title: "Analyze your tone",
+                  desc: "One click reads your sent emails and builds your unique writing profile.",
+                },
+                {
+                  n: "04",
+                  title: "Generate replies",
+                  desc: "Click on any email to get a draft, or enable auto-draft to handle it automatically.",
+                },
+              ].map((step, i) => (
+                <div key={step.n} className="flex gap-5 group">
+                  <div className="flex flex-col items-center">
+                    <span className="text-xs font-mono text-accent/70 font-bold">
+                      {step.n}
+                    </span>
+                    {i < 3 && (
+                      <div className="w-px flex-1 bg-border mt-2" />
+                    )}
+                  </div>
+                  <div className="pb-2">
+                    <h3 className="font-semibold text-text-primary mb-1">
+                      {step.title}
+                    </h3>
+                    <p className="text-sm text-text-secondary leading-relaxed">
+                      {step.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right — contextual detail */}
+          <div className="flex flex-col justify-center">
+            <div className="rounded-2xl border border-border bg-bg-secondary p-8">
+              <h3 className="text-lg font-semibold text-text-primary mb-3">
+                Bring your own AI
+              </h3>
+              <p className="text-sm text-text-secondary leading-relaxed mb-6">
+                Works with 8 providers. Paste any API key and the extension
+                detects which one it is. Switch anytime.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {providers.map((p) => (
+                  <span
+                    key={p}
+                    className="text-xs font-medium text-text-primary bg-bg-muted border border-border rounded-full px-3 py-1.5 hover:border-accent/40 transition-colors"
+                  >
+                    {p}
+                  </span>
+                ))}
               </div>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
-function AIProviders() {
-  return (
-    <section className="py-20 px-6">
-      <div className="mx-auto max-w-3xl text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-text-primary mb-4">
-          Bring your own AI
-        </h2>
-        <p className="text-text-secondary text-lg mb-12 max-w-xl mx-auto">
-          Choose the AI provider that works best for you. Bring your own API key
-          and keep full control.
-        </p>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          {[
-            { name: "Claude", provider: "Anthropic" },
-            { name: "GPT", provider: "OpenAI" },
-            { name: "Gemini", provider: "Google" },
-            { name: "Grok", provider: "xAI" },
-            { name: "DeepSeek", provider: "DeepSeek" },
-            { name: "Qwen", provider: "Alibaba" },
-            { name: "Kimi", provider: "Moonshot" },
-            { name: "GLM", provider: "Zhipu AI" },
-          ].map((p) => (
-            <div
-              key={p.name}
-              className="rounded-xl border border-border bg-bg-secondary p-5 hover:border-border-strong transition-colors"
-            >
-              <h3 className="font-bold text-text-primary text-base">{p.name}</h3>
-              <p className="text-xs text-text-muted mt-1">by {p.provider}</p>
+            {/* Privacy callout */}
+            <div className="mt-4 rounded-2xl border border-border bg-bg-secondary/50 p-6">
+              <div className="flex items-start gap-3">
+                <Shield size={18} className="text-accent mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-sm font-medium text-text-primary">
+                    Your data stays yours
+                  </p>
+                  <p className="text-xs text-text-muted mt-1 leading-relaxed">
+                    Everything is stored locally in your browser. Emails are only
+                    sent to your chosen AI provider using your own API key. No
+                    tracking, no analytics, no intermediary servers.
+                  </p>
+                </div>
+              </div>
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-    </section>
-  );
-}
-
-function Install() {
-  return (
-    <section id="install" className="py-20 px-6 bg-bg-secondary">
-      <div className="mx-auto max-w-2xl text-center">
-        <div className="w-16 h-16 rounded-2xl bg-accent-light border border-border-strong flex items-center justify-center mx-auto mb-6">
-          <Chrome size={32} className="text-accent" />
-        </div>
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-text-primary">
-          Coming soon to Chrome
-        </h2>
-        <p className="mt-4 text-text-secondary text-lg max-w-lg mx-auto">
-          EmailResponder is currently under review on the Chrome Web Store.
-          Check back soon to install and start getting personalized email reply drafts.
-        </p>
-        <div
-          className="mt-8 inline-flex items-center gap-2 bg-primary/60 text-primary-fg px-8 py-4 rounded-xl text-lg font-semibold cursor-default shadow-lg"
-        >
-          <Chrome size={22} />
-          Coming Soon
-        </div>
-        <p className="mt-4 text-sm text-text-muted">
-          Free to use. Requires your own AI API key.
-        </p>
       </div>
     </section>
   );
@@ -290,46 +320,41 @@ function Install() {
 
 function Creator() {
   return (
-    <section id="creator" className="py-20 px-6">
-      <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-2xl font-bold tracking-tight text-text-primary mb-8">
-          Built by
-        </h2>
-        <div className="inline-flex flex-col items-center gap-4">
-          <Image
-            src="/aurimas.jpeg"
-            alt="Aurimas Baciauskas"
-            width={80}
-            height={80}
-            className="rounded-full border-2 border-border-strong object-cover"
-          />
-          <div>
-            <h3 className="text-xl font-semibold text-text-primary">
+    <section className="py-16 px-6 border-t border-border">
+      <div className="mx-auto max-w-6xl flex flex-col sm:flex-row items-center gap-6">
+        <Image
+          src="/aurimas.jpeg"
+          alt="Aurimas Baciauskas"
+          width={56}
+          height={56}
+          className="rounded-full border border-border-strong object-cover"
+        />
+        <div className="text-center sm:text-left">
+          <p className="text-sm text-text-secondary">
+            Built by{" "}
+            <span className="text-text-primary font-medium">
               Aurimas Baciauskas
-            </h3>
-            <p className="text-text-secondary mt-1">
-              Developer &amp; creator of EmailResponder
-            </p>
-            <div className="flex items-center justify-center gap-4 mt-4">
-              <a
-                href="https://www.linkedin.com/in/auribaci/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-text-secondary hover:text-accent transition-colors"
-              >
-                <Linkedin size={18} />
-                LinkedIn
-              </a>
-              <a
-                href="https://github.com/auridevcourse"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-text-secondary hover:text-accent transition-colors"
-              >
-                <Github size={18} />
-                GitHub
-              </a>
-            </div>
+            </span>
+          </p>
+          <div className="flex items-center justify-center sm:justify-start gap-4 mt-2">
+            <a
+              href="https://www.linkedin.com/in/auribaci/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs text-text-muted hover:text-accent transition-colors"
+            >
+              <Linkedin size={14} />
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/auridevcourse"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs text-text-muted hover:text-accent transition-colors"
+            >
+              <Github size={14} />
+              GitHub
+            </a>
           </div>
         </div>
       </div>
@@ -343,11 +368,8 @@ export default function Home() {
       <NavBar />
       <main>
         <Hero />
-        <ScreenshotSection />
         <Features />
         <HowItWorks />
-        <AIProviders />
-        <Install />
         <Creator />
       </main>
       <Footer />
