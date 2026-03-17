@@ -16,7 +16,7 @@ export default function PrivacyPolicy() {
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-text-primary mb-2">
             Privacy Policy
           </h1>
-          <p className="text-sm text-text-muted mb-10">Last updated: February 27, 2026</p>
+          <p className="text-sm text-text-muted mb-10">Last updated: March 17, 2026</p>
 
           <div className="space-y-8 text-text-secondary leading-relaxed">
             <section>
@@ -26,8 +26,7 @@ export default function PrivacyPolicy() {
               <p>
                 EmailResponder is a Chrome extension that reads your recent
                 Gmail inbox, analyzes your writing tone from sent emails, and creates
-                AI-generated reply drafts using your chosen AI provider (Anthropic
-                Claude, OpenAI, or Google Gemini).
+                AI-generated reply drafts using your chosen AI provider.
               </p>
             </section>
 
@@ -56,7 +55,7 @@ export default function PrivacyPolicy() {
                 </li>
                 <li>
                   <strong className="text-text-primary">AI API key</strong> — You
-                  provide your own API key, which is stored locally in Chrome
+                  provide your own API key for one of the supported providers, which is stored locally in Chrome
                   extension storage.
                 </li>
               </ul>
@@ -70,10 +69,33 @@ export default function PrivacyPolicy() {
                 <li>
                   Email content (subject, snippet, body) is sent to your chosen AI
                   provider to generate reply drafts and analyze your writing tone.
+                  Supported providers:
+                  <ul className="list-disc list-outside ml-5 mt-2 space-y-1">
+                    <li>
+                      <strong className="text-text-primary">Anthropic (Claude)</strong> —{" "}
+                      <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Privacy Policy</a>{" "}
+                      — API inputs are not used for model training.
+                    </li>
+                    <li>
+                      <strong className="text-text-primary">OpenAI</strong> —{" "}
+                      <a href="https://openai.com/enterprise-privacy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Privacy Policy</a>{" "}
+                      — API inputs are not used for model training by default.
+                    </li>
+                    <li>
+                      <strong className="text-text-primary">Google Gemini</strong> —{" "}
+                      <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Terms of Service</a>{" "}
+                      — API inputs are not used for model training.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  Email data is sent to the AI provider <strong className="text-text-primary">only</strong> for the
+                  purpose of generating a personalized reply for that specific email. No data is retained by
+                  EmailResponder after the API response is received.
                 </li>
                 <li>
                   All processing happens on-demand or via a periodic background check
-                  (every 10 minutes when enabled).
+                  (every 10 minutes when auto-reply is enabled).
                 </li>
                 <li>
                   Generated drafts are saved directly to your Gmail Drafts folder via
@@ -88,7 +110,7 @@ export default function PrivacyPolicy() {
               </h2>
               <ul className="list-disc list-outside ml-5 space-y-2">
                 <li>
-                  Your API key, tone profile, activity log, and settings are stored{" "}
+                  Your API key, tone profile, activity log, knowledge base entries, and settings are stored{" "}
                   <strong className="text-text-primary">locally</strong> in
                   Chrome&apos;s{" "}
                   <code className="text-sm bg-bg-muted border border-border rounded px-1.5 py-0.5">
@@ -96,38 +118,14 @@ export default function PrivacyPolicy() {
                   </code>{" "}
                   on your device.
                 </li>
-                <li>No data is stored on any server we operate.</li>
                 <li>
-                  Email content sent to AI providers is subject to their respective
-                  privacy policies:{" "}
-                  <a
-                    href="https://www.anthropic.com/privacy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-accent hover:underline"
-                  >
-                    Anthropic
-                  </a>
-                  ,{" "}
-                  <a
-                    href="https://openai.com/privacy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-accent hover:underline"
-                  >
-                    OpenAI
-                  </a>
-                  ,{" "}
-                  <a
-                    href="https://policies.google.com/privacy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-accent hover:underline"
-                  >
-                    Google
-                  </a>
-                  .
+                  OAuth tokens are managed by Chrome&apos;s{" "}
+                  <code className="text-sm bg-bg-muted border border-border rounded px-1.5 py-0.5">
+                    chrome.identity
+                  </code>{" "}
+                  API and are not stored by the extension.
                 </li>
+                <li>No data is stored on any server we operate.</li>
               </ul>
             </section>
 
@@ -140,11 +138,14 @@ export default function PrivacyPolicy() {
                   We do <strong className="text-text-primary">not</strong> sell,
                   share, or transfer your data to any third party, except as needed to
                   provide the service (sending email content to your chosen AI
-                  provider for processing).
+                  provider for reply generation).
                 </li>
                 <li>
                   We do <strong className="text-text-primary">not</strong> use your
-                  data for advertising or analytics.
+                  data for advertising, analytics, or any purpose unrelated to the extension&apos;s core functionality.
+                </li>
+                <li>
+                  None of the supported AI providers use API inputs for training generalized or non-personalized AI/ML models.
                 </li>
               </ul>
             </section>
@@ -156,7 +157,25 @@ export default function PrivacyPolicy() {
               <p>
                 All data is stored locally on your device and is removed when you
                 uninstall the extension or clear extension data. We do not retain any
-                data on external servers.
+                data on external servers. You can also delete all stored data from within the extension&apos;s settings.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-lg font-semibold text-text-primary mb-3">
+                Google API Services User Data Policy
+              </h2>
+              <p>
+                EmailResponder&apos;s use and transfer to any other app of information received from Google APIs will adhere to the{" "}
+                <a
+                  href="https://developers.google.com/terms/api-services-user-data-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:underline"
+                >
+                  Google API Services User Data Policy
+                </a>
+                , including the Limited Use requirements.
               </p>
             </section>
 

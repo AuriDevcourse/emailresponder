@@ -15,10 +15,7 @@ import {
 import { NavBar } from "./components/nav-bar";
 import { Footer } from "./components/footer";
 
-const providers = [
-  "Anthropic", "OpenAI", "Gemini", "Grok",
-  "DeepSeek", "Qwen", "Kimi", "GLM",
-];
+const providers = ["Anthropic", "OpenAI", "Gemini"];
 
 function Hero() {
   return (
@@ -280,7 +277,7 @@ function HowItWorks() {
                 Bring your own AI
               </h3>
               <p className="text-sm text-text-secondary leading-relaxed mb-6">
-                Works with 8 providers. Paste any API key and the extension
+                Works with 3 trusted providers. Paste any API key and the extension
                 detects which one it is. Switch anytime.
               </p>
               <div className="flex flex-wrap gap-2">
