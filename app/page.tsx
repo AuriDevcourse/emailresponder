@@ -40,10 +40,15 @@ function Hero() {
               drafts replies that actually sound like you. Not a bot. You.
             </p>
             <div className="mt-8 flex items-center gap-4">
-              <div className="inline-flex items-center gap-2 bg-primary text-primary-fg px-5 py-2.5 rounded-lg text-sm font-semibold">
+              <a
+                href="https://chromewebstore.google.com/detail/gmecfmdepjbciklfnnimheadhknfelfj/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-primary text-primary-fg px-5 py-2.5 rounded-lg text-sm font-semibold transition-opacity hover:opacity-90"
+              >
                 <Chrome size={18} />
-                Coming Soon
-              </div>
+                Add to Chrome
+              </a>
               <a
                 href="#how-it-works"
                 className="group inline-flex items-center gap-1.5 text-sm text-text-secondary hover:text-accent transition-colors"

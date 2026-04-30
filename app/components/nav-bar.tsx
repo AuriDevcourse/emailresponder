@@ -27,10 +27,15 @@ export function NavBar() {
           >
             How it works
           </a>
-          <span className="inline-flex items-center gap-2 border border-border text-text-secondary px-3.5 py-1.5 rounded-lg text-xs font-medium cursor-default">
+          <a
+            href="https://chromewebstore.google.com/detail/gmecfmdepjbciklfnnimheadhknfelfj/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-primary text-primary-fg px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-opacity hover:opacity-90"
+          >
             <Chrome size={14} />
-            Coming Soon
-          </span>
+            Add to Chrome
+          </a>
         </div>
       </div>
     </nav>
