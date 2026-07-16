@@ -16,7 +16,7 @@ export default function PrivacyPolicy() {
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-text-primary mb-2">
             Privacy Policy
           </h1>
-          <p className="text-sm text-text-muted mb-10">Last updated: March 17, 2026</p>
+          <p className="text-sm text-text-muted mb-10">Last updated: June 16, 2026</p>
 
           <div className="space-y-8 text-text-secondary leading-relaxed">
             <section>
@@ -126,6 +126,83 @@ export default function PrivacyPolicy() {
                   API and are not stored by the extension.
                 </li>
                 <li>No data is stored on any server we operate.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="text-lg font-semibold text-text-primary mb-3">
+                How we protect your data (data security)
+              </h2>
+              <p className="mb-3">
+                EmailResponder applies the following data protection mechanisms
+                to safeguard sensitive data, including the Google user data
+                obtained through restricted Gmail scopes:
+              </p>
+              <ul className="list-disc list-outside ml-5 space-y-2">
+                <li>
+                  <strong className="text-text-primary">Encryption in transit</strong>{" "}
+                  — All data transmitted by the extension travels over HTTPS/TLS.
+                  This includes every request to the Gmail API and to your chosen
+                  AI provider. Data is never sent over an unencrypted connection.
+                </li>
+                <li>
+                  <strong className="text-text-primary">Local-only, on-device storage</strong>{" "}
+                  — Your Gmail content, tone profile, knowledge base, settings,
+                  and API key are stored exclusively in{" "}
+                  <code className="text-sm bg-bg-muted border border-border rounded px-1.5 py-0.5">
+                    chrome.storage.local
+                  </code>{" "}
+                  on your own device, protected at rest by your operating system
+                  and Chrome&apos;s user-profile sandbox. We operate no servers
+                  and store none of your data remotely, so there is no central
+                  database that could be breached.
+                </li>
+                <li>
+                  <strong className="text-text-primary">Secure authentication</strong>{" "}
+                  — Sign-in uses Google OAuth 2.0 via Chrome&apos;s{" "}
+                  <code className="text-sm bg-bg-muted border border-border rounded px-1.5 py-0.5">
+                    chrome.identity
+                  </code>{" "}
+                  API. OAuth access tokens are managed by Chrome&apos;s secure
+                  token store and are never written to disk or persisted by the
+                  extension. You can revoke access at any time from your Google
+                  Account.
+                </li>
+                <li>
+                  <strong className="text-text-primary">Data minimization</strong>{" "}
+                  — We request only the minimum Gmail scopes needed
+                  ({" "}
+                  <code className="text-sm bg-bg-muted border border-border rounded px-1.5 py-0.5">
+                    gmail.readonly
+                  </code>{" "}
+                  and{" "}
+                  <code className="text-sm bg-bg-muted border border-border rounded px-1.5 py-0.5">
+                    gmail.compose
+                  </code>
+                  ), process only the emails needed to generate a reply, and send
+                  the minimum content required to the AI provider. Email content
+                  is not retained after the AI response is received.
+                </li>
+                <li>
+                  <strong className="text-text-primary">No third-party access beyond named sub-processors</strong>{" "}
+                  — The only external party that receives email content is the AI
+                  provider you choose (Anthropic, OpenAI, or Google), listed
+                  above, and only to generate your reply. No advertising,
+                  analytics, or tracking SDKs are included in the extension.
+                </li>
+                <li>
+                  <strong className="text-text-primary">Restricted execution</strong>{" "}
+                  — The extension enforces a Content Security Policy, loads no
+                  remote or third-party code, and runs no inline or evaluated
+                  scripts, reducing the risk of malicious code accessing your
+                  data.
+                </li>
+                <li>
+                  <strong className="text-text-primary">User-controlled deletion</strong>{" "}
+                  — You can permanently erase all stored data at any time using
+                  &quot;Delete all data&quot; in the extension settings, or by
+                  uninstalling the extension.
+                </li>
               </ul>
             </section>
 
